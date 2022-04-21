@@ -28,6 +28,8 @@ https://amicht.github.io/Black-Jack-21/main.html
 
 * add 'double' function - drow another card / double bet
 
+* add insurance btn - dealer have Ace, + half bet, manage win
+
 * Dealer's turn - limit 17 / player comparison / resault
 
 
