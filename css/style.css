@@ -1,7 +1,10 @@
 *{
     box-sizing: border-box;
 }
-
+.title{
+    font-family: 'Chicle', cursive;
+    font-size: 50px;
+}
 .app{
     background-color: rgb(5, 98, 5);
     border-radius: 20%;
