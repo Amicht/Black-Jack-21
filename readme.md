@@ -16,8 +16,6 @@ https://amicht.github.io/Black-Jack-21/main.html
 
 ## missions left :
 
-* add wallet - bet, increase / decrease each turn, btn-logic, Player class params
-
 * add 'split' function - read more about it
 
 * add 'double' function - drow another card / double bet
