@@ -1,20 +1,8 @@
 const cardTypes = {
-    diamond:{
-        icon: '♦',
-        color: 'red'
-    },
-    spades:{
-        icon: '♠',
-        color: 'black'
-    },
-    heart:{
-        icon: '♥',
-        color: 'red'
-    },
-    clubs:{
-        icon: '♣',
-        color: 'black'
-    }
+    diamond:{ icon: '♦', color: 'red'},
+    spades:{  icon: '♠', color: 'black'},
+    heart:{ icon: '♥', color: 'red'},
+    clubs:{ icon: '♣', color: 'black'}
 }
 function createDeck(maxNum){
     const cardDeck = [];

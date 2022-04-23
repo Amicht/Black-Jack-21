@@ -15,28 +15,32 @@ class Player{
     cards;
     total;
     isAced;
-    acedTotal;
     constructor(){
         this.cards = [];
         this.total = 0;
         this.isAced = false;
-        this.acedTotal = this.total;
     }
     
     update(card){
         this.cards.push(card);
         this.total += card.number;
         this.checkAces();
-        this.isAced? this.acedTotal = this.total + 10: null;
     }
     clear(){
         this.cards = [];
         this.total = 0;
         this.isAced = false;
-        this.acedTotal = this.total;
     }
     checkAces(){
         if(this.isAced) return;
-        this.cards[this.cards.length -1].number === 1? this.isAced = true:null;
+        if(this.cards[this.cards.length -1].number === 1) this.isAced = true;
+    }
+    highest(){
+        if(this.isAced && this.total+10<22)return this.total+10;
+        return  this.total;
+    }
+    isBJ(){
+        if(this.cards.length === 2 && this.highest()===21) return true;
+        return false;
     }
 }
