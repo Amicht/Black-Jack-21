@@ -15,12 +15,15 @@ class Player{
     cards;
     total;
     isAced;
+    wallet;
+    bet;
     constructor(){
         this.cards = [];
         this.total = 0;
         this.isAced = false;
+        this.wallet = 1000;
+        this.bet = 5;
     }
-    
     update(card){
         this.cards.push(card);
         this.total += card.number;
@@ -42,5 +45,11 @@ class Player{
     isBJ(){
         if(this.cards.length === 2 && this.highest()===21) return true;
         return false;
+    }
+    setWlt(){
+        return {
+            win: () => this.wallet += this.bet,
+            lose: ()=> this.wallet -= this.bet
+        }
     }
 }

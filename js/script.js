@@ -5,7 +5,7 @@ const gameInfo = document.getElementById('gameInfo');
 const hit = document.getElementById('hit');
 const stand = document.getElementById('stand')
 const playAgainBtn = document.getElementById('playAgainBtn');
-
+const myWallet = document.getElementById('myWallet');
 
 const playerData = new Player();
 const dealerData = new Player();
@@ -60,7 +60,6 @@ function gameModule(){
         if(dl>pl) return gameOver().lose();
         if(dl<pl) return gameOver().win();
         if(dl===pl) return gameOver().draw();
-        //console.log(endGame.check(dealerData,playerData));
     }
     
     function DealerTurn (){
@@ -82,10 +81,14 @@ function gameOver(){
     function lose(){
         gameInfo.innerHTML = `you lose (${playerData.highest()} / 
         ${dealerData.highest()})`;
+        playerData.setWlt().lose();
+        myWallet.innerText = playerData.wallet;
     }
     function win(){
         gameInfo.innerHTML = `you win! (${playerData.highest()} / 
         ${dealerData.highest()})`;
+        playerData.setWlt().win();
+        myWallet.innerText = playerData.wallet;
     }
     function draw(){
         gameInfo.innerHTML = `Its a draw (${playerData.highest()} / 
