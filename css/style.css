@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
 }
-.title{
+.bj-font{
     font-family: 'Chicle', cursive;
-    font-size: 50px;
+}
+.bet-info{
+    font-size: 30px;
 }
 .app{
     background-color: rgb(5, 98, 5);
