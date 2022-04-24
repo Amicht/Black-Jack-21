@@ -27,8 +27,8 @@ function titleStyle(){
 }
 
 function init(){
-    myBet.innerHTML = playerData.bet;
-    myWallet.innerHTML = playerData.wallet;
+    myBet.innerHTML = playerData.bet +'$';
+    myWallet.innerHTML = playerData.wallet +'$';
     playerData.clear();
     dealerData.clear();
     gameInfo.innerHTML = '0';
