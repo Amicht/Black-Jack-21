@@ -2,13 +2,17 @@
     box-sizing: border-box;
 }
 .body{
-    background-color: rgb(207, 59, 59);
+    background-color: rgba(0, 0, 0, 0.814)
 }
 .bj-font{
     font-family: 'Chicle', cursive;
 }
 .bet-info{
-    font-size: 30px;
+    color: gold;
+}
+.title-icon{
+    color: red;
+    font-size: 15px;
 }
 .app{
     background-color: rgb(5, 98, 5);

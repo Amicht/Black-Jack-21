@@ -21,8 +21,8 @@ class Player{
         this.cards = [];
         this.total = 0;
         this.isAced = false;
-        this.wallet = 1000;
-        this.bet = 5;
+        this.wallet = 500;
+        this.bet = 10;
     }
     update(card){
         this.cards.push(card);
@@ -49,7 +49,8 @@ class Player{
     setWlt(){
         return {
             win: () => this.wallet += this.bet,
-            lose: ()=> this.wallet -= this.bet
+            winBJ: () => this.wallet += this.bet + (this.bet/2),
+            lose: ()=> this.wallet -= this.bet,
         }
     }
 }

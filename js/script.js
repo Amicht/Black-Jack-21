@@ -1,4 +1,5 @@
 const app = document.getElementById('app');
+const title = document.getElementById('title');
 const dealer = document.getElementById('dealer');
 const player = document.getElementById('player');
 const gameInfo = document.getElementById('gameInfo');
@@ -6,11 +7,28 @@ const hit = document.getElementById('hit');
 const stand = document.getElementById('stand')
 const playAgainBtn = document.getElementById('playAgainBtn');
 const myWallet = document.getElementById('myWallet');
+const myBet = document.getElementById('myBet');
+
+title.innerHTML = titleStyle();
 
 const playerData = new Player();
 const dealerData = new Player();
 
+
+function titleStyle(){
+    return `Black
+    <span class="title-icon py-auto">
+    ${cardTypes.heart.icon}
+    </span> 
+    Jack 
+    <span class="title-icon fs-2">
+    ${cardTypes.diamond.icon}
+    </span>`
+}
+
 function init(){
+    myBet.innerHTML = playerData.bet;
+    myWallet.innerHTML = playerData.wallet;
     playerData.clear();
     dealerData.clear();
     gameInfo.innerHTML = '0';
@@ -22,6 +40,7 @@ function init(){
     dealer.innerHTML = createCardStyle(addCard(cardDeck, dealerData));
     player.innerHTML = createCardStyle(addCard(cardDeck, playerData));
     player.innerHTML += createCardStyle(addCard(cardDeck, playerData));
+    if(playerData.isBJ()) return gameOver().bj();
 
     hit.onclick = addCardBtn;
     stand.onclick = standBtn;
@@ -33,6 +52,7 @@ function init(){
         if(playerData.highest()>21) gameOver().lose();
     }
     function standBtn(){
+        stand.disabled = true;
         dealer.innerHTML += createCardStyle(addCard(cardDeck, dealerData));
         gameInfo.innerHTML = `score: ${playerData.highest()} / 
         ${dealerData.highest()}`;
@@ -82,18 +102,23 @@ function gameOver(){
         gameInfo.innerHTML = `you lose (${playerData.highest()} / 
         ${dealerData.highest()})`;
         playerData.setWlt().lose();
-        myWallet.innerText = playerData.wallet;
+        myWallet.innerText = playerData.wallet + '$';
     }
     function win(){
         gameInfo.innerHTML = `you win! (${playerData.highest()} / 
         ${dealerData.highest()})`;
         playerData.setWlt().win();
-        myWallet.innerText = playerData.wallet;
+        myWallet.innerText = playerData.wallet + '$';
     }
     function draw(){
         gameInfo.innerHTML = `Its a draw (${playerData.highest()} / 
         ${dealerData.highest()})`
     }
-    return {lose,win, draw}
+    function bj(){
+        gameInfo.innerHTML = `Black Jack!!!`;
+        playerData.setWlt().winBJ();
+        myWallet.innerText = playerData.wallet + '$';
+    }
+    return {lose,win, draw, bj}
 }
 init();
