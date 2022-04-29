@@ -11,9 +11,11 @@
 </head>
 <body class="body">
     <div class="bj-font navbar navbar-dark bg-dark py-0 mb-2">
-        <span id="title" class="navbar-brand fs-1 ps-3 title col-5"> 
-            Black Jack</span>
-        <span class="nav-link text-white text-end col-5 mx-2">
+        <span id="title" class="navbar-brand fs-1 ps-3 title col-3"> 
+            Black Jack
+        </span>
+        <span id="rules-nav" class="nav-link col-1 fs-2 rules-nav">Rules</span>
+        <span class="nav-link text-white text-end col-4 mx-2">
             my wallet: 
             <span class="bet-info" id="myWallet"></span> </br>
             bet: 
@@ -26,20 +28,23 @@
             <div id="dealer" class="mx-auto row dealer"></div>
             <div id="gameInfo" class="gameInfo">gameInfo</div>
             <div id="player" class="mx-auto row player"></div>
-            <div class="mx-auto buttons">
-                <button onclick="init()" id="playAgainBtn" class="btn-primary btn">play Again</button>
-                <button id="hit" class="btn-primary btn">Hit</button>
-                <button id="stand" class="btn-primary btn">Stand</button>
+            <div class="mx-auto buttons mb-3">
+                <button onclick="init()" id="playAgainBtn" class="btn-success btn">play Again</button>
+                <button id="double" class="btn-success btn">double</button>
+                <button id="hit" class="btn-success btn">Hit</button>
+                <button id="stand" class="btn-success btn">Stand</button>
             </div>
         </div>
     </div>
-    <footer class="container fixed-bottom">
+    <div id="rules-info"></div>
+    <footer id="footer" class="container fixed-bottom">
         <div class="pt-1 mt-1">
             <p class="text-white">© 2022 Amit Licht, web developer</p>
         </div>
     </footer>
     <script src="js/classes.js"></script>
     <script src="js/deck-functions.js"></script>
+    <script src="js/rules.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

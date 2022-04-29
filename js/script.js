@@ -1,8 +1,11 @@
 const app = document.getElementById('app');
 const title = document.getElementById('title');
+const rules_nav = document.getElementById('rules-nav');
+const rules_info = document.getElementById('rules-info');
 const dealer = document.getElementById('dealer');
 const player = document.getElementById('player');
 const gameInfo = document.getElementById('gameInfo');
+const double = document.getElementById('double');
 const hit = document.getElementById('hit');
 const stand = document.getElementById('stand')
 const playAgainBtn = document.getElementById('playAgainBtn');
@@ -10,11 +13,19 @@ const myWallet = document.getElementById('myWallet');
 const myBet = document.getElementById('myBet');
 
 title.innerHTML = titleStyle();
-
+rules_info.innerHTML = setRules();
+rules_nav.onclick = displayRules;
 const playerData = new Player();
 const dealerData = new Player();
 
-
+function displayRules(){
+    document.getElementById('footer').style.display = "none";
+    rules_info.style.display = "block";
+    document.getElementById('closeRules').onclick = ()=>{
+        rules_info.style.display = "none";
+        document.getElementById('footer').style.display = "block";
+    }
+}
 function titleStyle(){
     return `Black
     <span class="title-icon py-auto">
@@ -35,16 +46,21 @@ function init(){
     stand.disabled = false;
     playAgainBtn.disabled = true;
     hit.disabled = false;
+    double.disabled = true;
     const cardDeck = shuffle(createDeck(13));
 
     dealer.innerHTML = createCardStyle(addCard(cardDeck, dealerData));
     player.innerHTML = createCardStyle(addCard(cardDeck, playerData));
     player.innerHTML += createCardStyle(addCard(cardDeck, playerData));
+    double.disabled = false;
     if(playerData.isBJ()) return gameOver().bj();
 
     hit.onclick = addCardBtn;
     stand.onclick = standBtn;
+    double.onclick = doubleBtn;
+
     function addCardBtn(){
+        double.disabled = true;
         player.innerHTML += createCardStyle(addCard(cardDeck, playerData));
         gameInfo.innerHTML = `score: ${playerData.highest()} / 
         ${dealerData.highest()}`;
@@ -52,11 +68,18 @@ function init(){
         if(playerData.highest()>21) gameOver().lose();
     }
     function standBtn(){
+        double.disabled = true;
         stand.disabled = true;
         dealer.innerHTML += createCardStyle(addCard(cardDeck, dealerData));
         gameInfo.innerHTML = `score: ${playerData.highest()} / 
         ${dealerData.highest()}`;
         if(gameModule().DealerTurn()){return setTimeout(standBtn, 1000)};
+    }
+    function doubleBtn(){
+        playerData.isDoubled = true;
+        hit.disabled = true;
+        console.log(playerData.bet);
+        addCardBtn();
     }
 }
 

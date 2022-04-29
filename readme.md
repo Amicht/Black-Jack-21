@@ -3,15 +3,15 @@
 
 Play 'Black Jack' against the dealer, win money and invite friends to join
 
-## Link
-https://amicht.github.io/Black-Jack-21/main.html
+[app demo](https://amicht.github.io/Black-Jack-21/main.html)
 
-## Project tools:
-
+## Project tools
+languages: 
 - HTML
 - CSS
 - JS
-- liaberies / frameworks: 
+
+liaberies / frameworks:
   - Bootstrap CSS
 
 ## missions left :

@@ -2,7 +2,9 @@
     box-sizing: border-box;
 }
 .body{
-    background-color: rgba(0, 0, 0, 0.814)
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
 }
 .bj-font{
     font-family: 'Chicle', cursive;
@@ -13,6 +15,23 @@
 .title-icon{
     color: red;
     font-size: 15px;
+}
+div .rules-nav{
+    color:white;
+}
+div .rules-nav:hover{
+    color: rgb(151, 151, 151);
+    cursor: pointer;
+}
+#rules-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(252, 249, 249);
+    background-color: rgba(4, 4, 4,0.9);
+    width: 100%;
+    min-height: 100vh;
+    display: none;
 }
 .app{
     background-color: rgb(5, 98, 5);
