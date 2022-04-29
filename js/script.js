@@ -38,10 +38,10 @@ function titleStyle(){
 }
 
 function init(){
-    myBet.innerHTML = playerData.bet +'$';
-    myWallet.innerHTML = playerData.wallet +'$';
     playerData.clear();
     dealerData.clear();
+    myBet.innerHTML = playerData.bet +'$';
+    myWallet.innerHTML = playerData.wallet +'$';
     gameInfo.innerHTML = '0';
     stand.disabled = false;
     playAgainBtn.disabled = true;
@@ -76,9 +76,10 @@ function init(){
         if(gameModule().DealerTurn()){return setTimeout(standBtn, 1000)};
     }
     function doubleBtn(){
-        playerData.isDoubled = true;
+        playerData.bet *= 2;
         hit.disabled = true;
         console.log(playerData.bet);
+        myBet.innerHTML = playerData.bet +'$';
         addCardBtn();
     }
 }

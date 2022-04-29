@@ -21,7 +21,6 @@ class Player{
         this.cards = [];
         this.total = 0;
         this.isAced = false;
-        this.isDoubled = false;
         this.wallet = 500;
         this.bet = 10;
     }
@@ -34,7 +33,7 @@ class Player{
         this.cards = [];
         this.total = 0;
         this.isAced = false;
-        this.isDoubled = false;
+        this.bet = 10;
     }
     checkAces(){
         if(this.isAced) return;
@@ -52,7 +51,7 @@ class Player{
         return {
             win: () => this.wallet += this.bet,
             winBJ: () => this.wallet += this.bet + (this.bet/2),
-            lose: ()=> this.wallet -= this.bet * (this.isDoubled?2:1)
+            lose: ()=> this.wallet -= this.bet
         }
     }
     setBet(amount){
