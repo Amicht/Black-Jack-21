@@ -28,7 +28,7 @@ function displayRules(){
 }
 function titleStyle(){
     return `Black
-    <span class="title-icon py-auto fs-3">
+    <span class="title-icon py-auto fs-5">
     ${cardTypes.diamond.icon}
     </span> 
     Jack`
