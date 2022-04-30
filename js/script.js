@@ -45,6 +45,8 @@ function onloadTitleStyle(){
     ${cardTypes.diamond.icon}
     </span>
     Jack`;
+    onload_title.style.opacity = 1;
+    setTimeout(()=> startBtn.style.visibility = 'visible',3000);
     startBtn.onclick = ()=> {
         onload_screen.style.visibility = 'hidden';
         onload_screen.style.opacity = 0;

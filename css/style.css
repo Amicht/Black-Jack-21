@@ -23,9 +23,14 @@
     margin-bottom: 10px;
     font-size: 80px;
     transform: rotate(350deg);
+    transition: 2s ease-in;
+    opacity: 0;
 }
 .onload-icon.title-icon{
     font-size: 60px;
+}
+.startBtn{
+    visibility: hidden;
 }
 .bj-font{
     font-family: 'Chicle', cursive;
