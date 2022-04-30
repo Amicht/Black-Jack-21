@@ -28,13 +28,10 @@ function displayRules(){
 }
 function titleStyle(){
     return `Black
-    <span class="title-icon py-auto">
-    ${cardTypes.heart.icon}
-    </span> 
-    Jack 
-    <span class="title-icon fs-2">
+    <span class="title-icon py-auto fs-3">
     ${cardTypes.diamond.icon}
-    </span>`
+    </span> 
+    Jack`
 }
 function onloadTitleStyle(){
     const onload_screen = document.getElementById('onload-screen');
