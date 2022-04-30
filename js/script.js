@@ -66,7 +66,7 @@ function init(){
     player.innerHTML = createCardStyle(addCard(cardDeck, playerData));
     player.innerHTML += createCardStyle(addCard(cardDeck, playerData));
     double.disabled = false;
-    if(playerData.isBJ()) return gameOver().bj();
+    if(playerData.isBJ())return gameOver().bj();
 
     hit.onclick = addCardBtn;
     stand.onclick = standBtn;
@@ -83,6 +83,7 @@ function init(){
     function standBtn(){
         double.disabled = true;
         stand.disabled = true;
+        hit.disabled = true;
         dealer.innerHTML += createCardStyle(addCard(cardDeck, dealerData));
         gameInfo.innerHTML = `score: ${playerData.highest()} / 
         ${dealerData.highest()}`;
@@ -132,6 +133,7 @@ function gameModule(){
 }
 function gameOver(){
     hit.disabled = true;
+    double.disabled = true;
     stand.disabled = true;
     playAgainBtn.disabled = false;
 

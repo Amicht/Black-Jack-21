@@ -21,7 +21,7 @@ function setRules(){
         <h2>${title}</h2>
         <ul>${rules.map(r=>`<li>${r}</li>`).join('')}</ul>
         <div class="text-center">
-            <button id="closeRules" class="btn-success btn mt-2">close</button>
+            <button id="closeRules" class="btn-light btn mt-2">close</button>
         </div>
     </div>`;
 }
