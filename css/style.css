@@ -22,8 +22,8 @@
     margin: 30px;
     margin-bottom: 10px;
     font-size: 80px;
+    transition: ease-in-out 3s;
     transform: rotate(350deg);
-    transition: 2s ease-in;
     opacity: 0;
 }
 .onload-icon.title-icon{
