@@ -6,6 +6,27 @@
     width: 100%;
     height: 100%;
 }
+.onload-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    transition: ease-in-out 3s;
+}
+.onload-title{
+    margin: 30px;
+    margin-bottom: 10px;
+    font-size: 80px;
+    transform: rotate(350deg);
+}
+.onload-icon.title-icon{
+    font-size: 60px;
+}
 .bj-font{
     font-family: 'Chicle', cursive;
 }

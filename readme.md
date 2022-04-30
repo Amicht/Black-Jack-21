@@ -18,7 +18,7 @@ liaberies / frameworks:
 
 * add 'split' function - read more about it
 
-* add 'double' function - drow another card / double bet
+* add a 'set-bet' function, beggining of each turn
 
 * add insurance btn - dealer have Ace, + half bet, manage win
 

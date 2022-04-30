@@ -36,7 +36,23 @@ function titleStyle(){
     ${cardTypes.diamond.icon}
     </span>`
 }
-
+function onloadTitleStyle(){
+    const onload_screen = document.getElementById('onload-screen');
+    const onload_title = document.getElementById('onload-title');
+    const startBtn = document.getElementById('startBtn');
+    onload_title.innerHTML = `<span>Black</span>
+    <span class="title-icon onload-icon m-2">
+    ${cardTypes.heart.icon}
+    </span> </br> 
+    <span class="title-icon onload-icon m-2">
+    ${cardTypes.diamond.icon}
+    </span>
+    Jack`;
+    startBtn.onclick = ()=> {
+        onload_screen.style.visibility = 'hidden';
+        onload_screen.style.opacity = 0;
+    };
+}
 function init(){
     playerData.clear();
     dealerData.clear();
@@ -145,4 +161,5 @@ function gameOver(){
     }
     return {lose,win, draw, bj}
 }
+onloadTitleStyle();
 init();
