@@ -3,7 +3,7 @@
 
 Play 'Black Jack' against the dealer, win money and invite friends to join
 
-[app demo](https://amicht.github.io/Black-Jack-21/main.html)
+[try it now](https://amicht.github.io/Black-Jack-21/main.html)
 
 ## Project tools
 languages: 
@@ -20,7 +20,7 @@ liaberies / frameworks:
 
 * add a 'set-bet' function, beggining of each turn
 
-* add insurance btn - dealer have Ace, + half bet, manage win
+* add insurance button - dealer have Ace, + half bet, manage win
 
 * (optional) mulitiple players
 

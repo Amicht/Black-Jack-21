@@ -22,7 +22,7 @@
     margin: 30px;
     margin-bottom: 10px;
     font-size: 80px;
-    transition: ease-in-out 3s;
+    transition: ease-in-out 5s;
     transform: rotate(350deg);
     opacity: 0;
 }
