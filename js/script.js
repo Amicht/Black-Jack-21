@@ -48,9 +48,8 @@ function onloadTitleStyle(){
     onload_title.style.opacity = 1;
     setTimeout(()=> startBtn.style.visibility = 'visible',4000);
     startBtn.onclick = ()=> {
-        onload_screen.style.visibility = 'hidden';
+        setTimeout(()=>onload_screen.style.display = 'none',3000);
         onload_screen.style.opacity = 0;
-        onload_title.style.opacity = 0;
     };
 }
 function init(){
