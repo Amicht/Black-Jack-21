@@ -42,6 +42,18 @@
     color: red;
     font-size: 15px;
 }
+.x-close-div{
+    width: 100%;
+    text-align: end;
+    padding: 20px;
+}
+#x-close{
+    font-weight: bold;
+    cursor: pointer;
+}
+#x-close:hover{
+    color: rgb(138, 136, 136);
+}
 div .rules-nav{
     color:white;
 }

@@ -21,10 +21,12 @@ const dealerData = new Player();
 function displayRules(){
     document.getElementById('footer').style.display = "none";
     rules_info.style.display = "block";
-    document.getElementById('closeRules').onclick = ()=>{
-        rules_info.style.display = "none";
+    const hideRules = ()=>{
         document.getElementById('footer').style.display = "block";
+        rules_info.style.display = "none";
     }
+    document.getElementById('closeRules').onclick = hideRules;
+    document.getElementById('x-close').onclick = hideRules;
 }
 function titleStyle(){
     return `Black

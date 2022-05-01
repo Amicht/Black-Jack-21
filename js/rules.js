@@ -18,6 +18,7 @@ const rules = [
 function setRules(){
     const title = 'Basic rules:';
     return `<div class="px-5 my-2">
+        <div class="x-close-div"><span id="x-close">X</span></div>
         <h2>${title}</h2>
         <ul>${rules.map(r=>`<li>${r}</li>`).join('')}</ul>
         <div class="text-center">
